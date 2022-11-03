@@ -1,8 +1,10 @@
 package com.example.coursjava;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Looper;
 import android.view.Menu;
@@ -31,6 +33,8 @@ public class LancerDeDeActivity extends AppCompatActivity {
     private TextView result4;
     private TextView result5;
 
+    private ConstraintLayout layout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +50,29 @@ public class LancerDeDeActivity extends AppCompatActivity {
         result3 = (TextView) findViewById(R.id.result3);
         result4 = (TextView) findViewById(R.id.result4);
         result5 = (TextView) findViewById(R.id.result5);
+
+        layout = (ConstraintLayout) findViewById(R.id.lanceDeLayout);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("SHARED_PREF", 0);
+
+        String colorSelected = sharedPreferences.getString("color", "White");
+
+        if (colorSelected == "White") {
+            layout.setBackgroundColor(getResources().getColor(R.color.white));
+        }
+        if (colorSelected == "Blue") {
+            layout.setBackgroundColor(getResources().getColor(R.color.blue));
+        }
+        if (colorSelected == "Red") {
+            layout.setBackgroundColor(getResources().getColor(R.color.red));
+        }
+        if (colorSelected == "Black") {
+            layout.setBackgroundColor(getResources().getColor(R.color.black));
+        }
+        if (colorSelected == "Orange") {
+            layout.setBackgroundColor(getResources().getColor(R.color.orange));
+        }
+
 
         swithTextImage.setOnClickListener(new View.OnClickListener() {
             @Override

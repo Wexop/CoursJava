@@ -1,7 +1,9 @@
 package com.example.coursjava;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,6 +19,8 @@ public class InfinyActivity extends AppCompatActivity {
     private EditText input2;
     private Button button;
     private TextView result;
+    private ConstraintLayout layout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +32,28 @@ public class InfinyActivity extends AppCompatActivity {
         input2 = (EditText) findViewById(R.id.infiniInput2);
         button = (Button) findViewById(R.id.inifinyLancerButton);
         result = (TextView) findViewById(R.id.infinyResult);
+
+        layout = (ConstraintLayout) findViewById(R.id.infiniLayout);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("SHARED_PREF", 0);
+
+        String colorSelected = sharedPreferences.getString("color", "White");
+
+        if (colorSelected == "White") {
+            layout.setBackgroundColor(getResources().getColor(R.color.white));
+        }
+        if (colorSelected == "Blue") {
+            layout.setBackgroundColor(getResources().getColor(R.color.blue));
+        }
+        if (colorSelected == "Red") {
+            layout.setBackgroundColor(getResources().getColor(R.color.red));
+        }
+        if (colorSelected == "Black") {
+            layout.setBackgroundColor(getResources().getColor(R.color.black));
+        }
+        if (colorSelected == "Orange") {
+            layout.setBackgroundColor(getResources().getColor(R.color.orange));
+        }
 
         button.setOnClickListener(new View.OnClickListener() {
 

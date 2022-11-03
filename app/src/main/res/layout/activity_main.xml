@@ -30,7 +30,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/dernierLancer"
+        android:id="@+id/dernierLancerLayout"
         android:layout_width="208dp"
         android:layout_height="81dp"
         android:layout_alignParentStart="true"
@@ -70,5 +70,20 @@
         android:backgroundTint="#1495DA"
         android:text="infini"
         android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/parametreText"
+        android:layout_width="227dp"
+        android:layout_height="55dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="93dp"
+        android:layout_marginEnd="91dp"
+        android:layout_marginBottom="57dp"
+        android:gravity="center"
+        android:text="Paramètres"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
 
 </RelativeLayout>

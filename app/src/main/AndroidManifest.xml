@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NoActionBar"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ParametrageActivity"
+            android:exported="false" />
         <activity
             android:name=".InfinyActivity"
             android:exported="false" />
@@ -28,8 +30,8 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"
             android:configChanges="orientation"
+            android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
