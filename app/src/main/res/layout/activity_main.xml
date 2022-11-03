@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondde"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/depsiTitle"
+        android:layout_width="197dp"
+        android:layout_height="110dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="false"
+        android:layout_marginStart="104dp"
+        android:layout_marginEnd="109dp"
+        android:layout_marginBottom="602dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center"
+        android:text="Dé'PSI"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/dernierLancer"
+        android:layout_width="208dp"
+        android:layout_height="81dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="107dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="404dp"
+        android:backgroundTint="#40BCFF"
+        android:text="Mes derniers lancers"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/lancerDe"
+        android:layout_width="207dp"
+        android:layout_height="79dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="107dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="299dp"
+        android:backgroundTint="#5095FD"
+        android:text="Lancer le dé"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/Infini"
+        android:layout_width="207dp"
+        android:layout_height="79dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="110dp"
+        android:layout_marginEnd="93dp"
+        android:layout_marginBottom="198dp"
+        android:backgroundTint="#1495DA"
+        android:text="infini"
+        android:textSize="16sp" />
+
+</RelativeLayout>
