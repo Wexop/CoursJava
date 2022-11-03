@@ -13,6 +13,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import com.madrapps.pikolo.HSLColorPicker;
+import com.madrapps.pikolo.listeners.SimpleColorSelectionListener;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +23,7 @@ public class ParametrageActivity extends AppCompatActivity {
 
     private Spinner ColorsSpinner;
     private ConstraintLayout layout;
+    private HSLColorPicker colorPicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,7 @@ public class ParametrageActivity extends AppCompatActivity {
 
         ColorsSpinner = (Spinner) findViewById(R.id.ColorSpinner);
         layout = (ConstraintLayout)  findViewById(R.id.parametreLayout);
+        colorPicker = (HSLColorPicker) findViewById(R.id.colorPicker);
 
         List colorList = new ArrayList();
         colorList.add("White");
@@ -48,6 +53,15 @@ public class ParametrageActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         ColorsSpinner.setAdapter(adapter);
 
+        colorPicker.setColorSelectionListener(new SimpleColorSelectionListener() {
+            @Override
+            public void onColorSelected(int color) {
+                layout.setBackgroundColor(color);
+                editor.putString("color", String.valueOf(color));
+                editor.commit();
+            }
+        });
+
         ColorsSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -56,17 +70,20 @@ public class ParametrageActivity extends AppCompatActivity {
                 if (colorSelected == "White") {
                     layout.setBackgroundColor(getResources().getColor(R.color.white));
                 }
-                if (colorSelected == "Blue") {
+                else if (colorSelected == "Blue") {
                     layout.setBackgroundColor(getResources().getColor(R.color.blue));
                 }
-                if (colorSelected == "Red") {
+                else if (colorSelected == "Red") {
                     layout.setBackgroundColor(getResources().getColor(R.color.red));
                 }
-                if (colorSelected == "Black") {
+                else if (colorSelected == "Black") {
                     layout.setBackgroundColor(getResources().getColor(R.color.black));
                 }
-                if (colorSelected == "Orange") {
+                else if (colorSelected == "Orange") {
                     layout.setBackgroundColor(getResources().getColor(R.color.orange));
+                }
+                else {
+                    layout.setBackgroundColor(Integer.parseInt(colorSelected));
                 }
 
                 editor.putString("color", colorSelected);

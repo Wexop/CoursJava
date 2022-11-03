@@ -63,17 +63,20 @@ public class LancerDeDeActivity extends AppCompatActivity {
         if (colorSelected == "White") {
             layout.setBackgroundColor(getResources().getColor(R.color.white));
         }
-        if (colorSelected == "Blue") {
+        else if (colorSelected == "Blue") {
             layout.setBackgroundColor(getResources().getColor(R.color.blue));
         }
-        if (colorSelected == "Red") {
+        else if (colorSelected == "Red") {
             layout.setBackgroundColor(getResources().getColor(R.color.red));
         }
-        if (colorSelected == "Black") {
+        else if (colorSelected == "Black") {
             layout.setBackgroundColor(getResources().getColor(R.color.black));
         }
-        if (colorSelected == "Orange") {
+        else if (colorSelected == "Orange") {
             layout.setBackgroundColor(getResources().getColor(R.color.orange));
+        }
+        else {
+            layout.setBackgroundColor(Integer.parseInt(colorSelected));
         }
 
 
