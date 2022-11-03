@@ -51,6 +51,9 @@ public class LancerDeDeActivity extends AppCompatActivity {
         result4 = (TextView) findViewById(R.id.result4);
         result5 = (TextView) findViewById(R.id.result5);
 
+        SharedPreferences sharedDerniersDe = getSharedPreferences("DERNIER_DE", 0);
+        SharedPreferences.Editor dernierLancerEditor = sharedDerniersDe.edit();
+
         layout = (ConstraintLayout) findViewById(R.id.lanceDeLayout);
 
         SharedPreferences sharedPreferences = getSharedPreferences("SHARED_PREF", 0);
@@ -123,11 +126,19 @@ public class LancerDeDeActivity extends AppCompatActivity {
                 CharSequence getResult4 = result3.getText();
                 CharSequence getResult5 = result4.getText();
 
-                result1.setText(String.valueOf(lastResult) );
+                result1.setText(String.valueOf(lastResult));
                 result2.setText(String.valueOf(getResult2));
                 result3.setText(String.valueOf(getResult3));
                 result4.setText(String.valueOf(getResult4));
                 result5.setText(String.valueOf(getResult5));
+
+                dernierLancerEditor.putString("result1", String.valueOf(lastResult));
+                dernierLancerEditor.putString("result2", String.valueOf(getResult2));
+                dernierLancerEditor.putString("result3", String.valueOf(getResult3));
+                dernierLancerEditor.putString("result4", String.valueOf(getResult4));
+                dernierLancerEditor.putString("result5", String.valueOf(getResult5));
+
+                dernierLancerEditor.commit();
 
             }
 
